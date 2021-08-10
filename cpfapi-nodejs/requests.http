@@ -1,0 +1,22 @@
+# GETALL
+GET http://localhost:3000/cpf/return HTTP/1.1
+
+# GETCPF
+GET http://localhost:3000/cpf/return/"cpf" HTTP/1.1
+
+# POST
+POST http://localhost:3000/cpf/check HTTP/1.1
+content-type: application/json
+{
+    "cpf": "",
+}
+
+# PUTDESCRIPTION
+PUT http://localhost:3000/cpf/return/"cpf" HTTP/1.1
+content-type: application/json
+{
+    "description": ""
+}
+
+# DELETECPF
+DELETE http://localhost:3000/cpf/delete/"cpf" HTTP/1.1
