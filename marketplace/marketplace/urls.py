@@ -20,6 +20,6 @@ from rest_framework import routers
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('product.urls', namespace='api'))
+    path(r'api/', include('product.urls', namespace='api'))
 ]
 

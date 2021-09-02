@@ -14,12 +14,3 @@ class ProductSerializer(serializers.Serializer):
 
     def create(self, validated_data):
         return Product.objects.create(**validated_data)
-
-    def update(self, instance, validated_data):
-        instance.price = validated_data.get('price', instance.price)
-        instance.stock = validated_data.get('stock', instance.stock)
-        instance.save()
-        return instance
-
-    def destroy():
-        pass
