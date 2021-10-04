@@ -3,6 +3,7 @@ package com.disteoe.disteoeservice.entity.order;
 
 import com.disteoe.disteoeservice.entity.client.Client;
 import com.disteoe.disteoeservice.entity.employee.DeliveryMan;
+import com.disteoe.disteoeservice.entity.product.Product;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,6 +11,7 @@ import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Data
@@ -26,7 +28,7 @@ public class OrderBuy {
     private Date date;
 
     @ManyToOne
-    @JoinColumn(nullable = false)
+    @JoinColumn(name = "id_clientfk", referencedColumnName = "id", nullable = false)
     private Client client;
 
     @Column(nullable = false)
@@ -35,7 +37,10 @@ public class OrderBuy {
     private OrderStatus orderStatus;
 
     @ManyToOne
-    @JoinColumn(nullable = false)
+    @JoinColumn(name = "id_deliverymanfk", referencedColumnName = "id", nullable = false)
     private DeliveryMan deliveryMan;
+
+    @OneToMany(mappedBy = "orderbuy")
+    private List<ItemOrder> itemOrders;
 
 }

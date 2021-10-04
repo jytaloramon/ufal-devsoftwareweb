@@ -20,16 +20,17 @@ public class ItemOrder {
     private long id;
 
     @ManyToOne
-    @JoinColumn(nullable = false)
+    @JoinColumn(name = "id_orderbuyfk", referencedColumnName = "id", nullable = false)
     private OrderBuy orderBuy;
 
     @ManyToOne
-    @JoinColumn(nullable = false)
+    @JoinColumn(name = "id_productfk", referencedColumnName = "id", nullable = false)
     private Product product;
 
     @Column(nullable = false)
     @ColumnDefault("1")
     private int quantity;
+
 
 
 }

@@ -1,10 +1,12 @@
 package com.disteoe.disteoeservice.entity.product;
 
+import com.disteoe.disteoeservice.entity.order.ItemOrder;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -29,4 +31,6 @@ public class Product {
     @Column(nullable = false)
     private int quantityStock;
 
+    @OneToMany(mappedBy = "product")
+    private List<ItemOrder> itemOrders;
 }

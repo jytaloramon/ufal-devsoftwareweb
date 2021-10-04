@@ -28,4 +28,7 @@ public class CreditCard {
     @Column(nullable = false)
     private String cardHolderName;
 
+    @ManyToOne
+    @JoinColumn(name = "id_clientfk", referencedColumnName = "id", nullable = false)
+    private Client client;
 }

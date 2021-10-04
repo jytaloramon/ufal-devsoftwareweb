@@ -26,8 +26,12 @@ public class Address {
     @Column
     private String observation;
 
-    @JoinColumn
     @ManyToOne
+    @JoinColumn(name = "id_cityfk", referencedColumnName = "id", nullable = false)
     private City city;
+
+    @ManyToOne
+    @JoinColumn(name = "id_clientfk", referencedColumnName = "id", nullable = false)
+    private Client client;
 
 }

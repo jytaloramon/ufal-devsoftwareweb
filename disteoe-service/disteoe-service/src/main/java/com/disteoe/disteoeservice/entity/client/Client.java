@@ -2,6 +2,7 @@ package com.disteoe.disteoeservice.entity.client;
 
 import com.disteoe.disteoeservice.entity.financial.CreditCard;
 import com.disteoe.disteoeservice.entity.location.Address;
+import com.disteoe.disteoeservice.entity.order.OrderBuy;
 import com.disteoe.disteoeservice.entity.personal.People;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -27,12 +28,13 @@ public class Client extends People {
     @ColumnDefault("0")
     private double score;
 
-    @OneToMany
-    @JoinColumn(nullable = false)
+    @OneToMany(mappedBy = "client")
     private List<CreditCard> creditCard;
 
-    @OneToOne
-    @JoinColumn(nullable = false)
-    private Address address;
+    @OneToMany(mappedBy = "client")
+    private List<Address> address;
+
+    @OneToMany(mappedBy = "client")
+    private List<OrderBuy> orderBuys;
 
 }
