@@ -25,7 +25,7 @@ class Car extends Terrestrial {
     };
 
     run() {
-
+        console.log('Ligar: carro');
     };
 
 }

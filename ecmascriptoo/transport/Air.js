@@ -7,7 +7,9 @@ class Air extends Vehicle {
         super(passenger, typeFuel, velocityMax);
     };
 
-    voar() { };
+    voar() { 
+        console.log('Voar: aviao');
+    };
 
 }
 

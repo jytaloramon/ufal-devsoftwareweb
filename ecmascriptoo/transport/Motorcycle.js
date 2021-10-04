@@ -7,7 +7,7 @@ class Motorcycle extends Terrestrial {
     };
 
     run() {
-
+        console.log('Ligar: Motocicleta');
     };
 
 }
